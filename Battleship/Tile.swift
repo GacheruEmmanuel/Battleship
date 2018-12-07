@@ -11,4 +11,8 @@ import Foundation
 var isShip = false
 var isHit = false
 
-
+class Title {
+    func hit () {
+        
+    }
+}
