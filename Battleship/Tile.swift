@@ -10,8 +10,13 @@ import Foundation
 
 var isShip = false
 var isHit = false
+var Position = 0
 
-class Title {
+class Tile {
+    init(pos: Int){
+        Position = pos
+    }
+    
     func hit () {
         
     }

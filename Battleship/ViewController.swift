@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var tileArr: [Tile]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var i = 0
+        while i < 100 {
+            tileArr.append(Tile(pos : i))
+            i += 1
+        }
     }
 
     
