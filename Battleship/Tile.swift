@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+var isShip = false
+var isHit = false
+
+
