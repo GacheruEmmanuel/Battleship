@@ -12,6 +12,8 @@
 		C9CD649521BB00C1001457FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD649321BB00C1001457FD /* Main.storyboard */; };
 		C9CD649721BB00C1001457FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CD649621BB00C1001457FD /* Assets.xcassets */; };
 		C9CD649A21BB00C1001457FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD649821BB00C1001457FD /* LaunchScreen.storyboard */; };
+		C9F5353F21BB0AFD00E29C2F /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5353E21BB0AFD00E29C2F /* Ship.swift */; };
+		C9F5354121BB0BED00E29C2F /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5354021BB0BED00E29C2F /* Position.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		C9CD649621BB00C1001457FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9CD649921BB00C1001457FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9CD649B21BB00C1001457FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9F5353E21BB0AFD00E29C2F /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		C9F5354021BB0BED00E29C2F /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +58,14 @@
 		C9CD648E21BB00C1001457FD /* Battleship */ = {
 			isa = PBXGroup;
 			children = (
+				C9F5353E21BB0AFD00E29C2F /* Ship.swift */,
 				C9CD648F21BB00C1001457FD /* AppDelegate.swift */,
 				C9CD649121BB00C1001457FD /* ViewController.swift */,
 				C9CD649321BB00C1001457FD /* Main.storyboard */,
 				C9CD649621BB00C1001457FD /* Assets.xcassets */,
 				C9CD649821BB00C1001457FD /* LaunchScreen.storyboard */,
 				C9CD649B21BB00C1001457FD /* Info.plist */,
+				C9F5354021BB0BED00E29C2F /* Position.swift */,
 			);
 			path = Battleship;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CD649221BB00C1001457FD /* ViewController.swift in Sources */,
+				C9F5353F21BB0AFD00E29C2F /* Ship.swift in Sources */,
+				C9F5354121BB0BED00E29C2F /* Position.swift in Sources */,
 				C9CD649021BB00C1001457FD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +312,7 @@
 				C9CD64A021BB00C1001457FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
