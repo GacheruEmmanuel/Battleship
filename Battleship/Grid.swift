@@ -12,6 +12,7 @@ class Grid
 {
     var spaces = [Position]()
     
+    
     init(size : Int)
     {
         for _ in 0...size
