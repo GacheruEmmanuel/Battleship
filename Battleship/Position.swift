@@ -8,8 +8,20 @@
 
 import Foundation
 
-
-struct Position {
-    var x  = 0
-    var y  = 0
+struct Position
+{
+    var hasShip : Bool!
+    var ship_been_hit: Bool!
+    
+    
+    init(hasShip : Bool)
+    {
+        self.hasShip = hasShip;
+        self.ship_been_hit = false;
+    }
+    
+    mutating func destroy()
+    {
+        self.ship_been_hit = true;
+    }
 }
