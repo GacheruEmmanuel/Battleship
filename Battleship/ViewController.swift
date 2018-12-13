@@ -17,9 +17,16 @@ class ViewController: UIViewController {
     @IBAction func changeNames(_ sender: UIButton) {
         sender.setTitle("fish", for: .normal)
         
-        /*for button in boardGridButtons {
-            button.setTitle("fish", for: .normal)
-        }*/
+        //Identifying the index of the tile pressed
+        var index = 0
+        while index < boardGridButtons.count {
+            if boardGridButtons[index] == sender {
+                break
+            }
+            index += 1
+        }
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
