@@ -12,16 +12,27 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var boardGridButtons: [UIButton]!
+    var gridArr : [Position]! = [Position]()
     
     @IBAction func changeNames(_ sender: UIButton) {
+        sender.setTitle("fish", for: .normal)
         
-        for button in boardGridButtons {
+        /*for button in boardGridButtons {
             button.setTitle("fish", for: .normal)
-        }
+        }*/
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        for _ in boardGridButtons {
+            let tempPosition : Position = Position(hasShip: false)
+            gridArr.append(tempPosition)
+        }
+        
+        for button in boardGridButtons {
+            button.addTarget(self, action: #selector(changeNames(_:)), for: .touchUpInside)
+        }
         
     }
 
