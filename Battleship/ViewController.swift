@@ -13,9 +13,16 @@ class ViewController: UIViewController {
 
     @IBOutlet var boardGridButtons: [UIButton]!
     
+    @IBAction func changeNames(_ sender: UIButton) {
+        
+        for button in boardGridButtons {
+            button.setTitle("fish", for: .normal)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     
