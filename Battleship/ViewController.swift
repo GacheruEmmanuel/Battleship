@@ -26,7 +26,8 @@ class ViewController: UIViewController {
             index += 1
         }
         
-        
+        //Changing the color of the tile that was hit
+        gridArr[index].hitTile(button: sender)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

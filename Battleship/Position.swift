@@ -26,4 +26,8 @@ struct Position
     {
         self.ship_been_hit = true;
     }
+    
+    func hitTile(button : UIButton){
+        button.backgroundColor = UIColor.black
+    }
 }
