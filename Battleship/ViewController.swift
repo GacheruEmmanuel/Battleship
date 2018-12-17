@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var gridArr : [Position]! = [Position]()
     
     @IBAction func changeNames(_ sender: UIButton) {
-        sender.setTitle("fish", for: .normal)
+        sender.setTitle("ship", for: .normal)
         
         //Identifying the index of the tile pressed
         var index = 0
@@ -38,8 +38,11 @@ class ViewController: UIViewController {
             gridArr.append(tempPosition)
         }
         
+        //For every button on the screen
         for button in boardGridButtons {
             button.addTarget(self, action: #selector(changeNames(_:)), for: .touchUpInside)
+            button.setTitle("", for: .normal)
+            button.backgroundColor = .blue
         }
         
     }

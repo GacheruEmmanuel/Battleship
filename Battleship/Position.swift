@@ -28,6 +28,6 @@ struct Position
     }
     
     func hitTile(button : UIButton){
-        button.backgroundColor = UIColor.black
+        button.backgroundColor = UIColor.brown
     }
 }
