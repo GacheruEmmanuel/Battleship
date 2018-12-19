@@ -27,14 +27,5 @@ struct Position
         self.ship_been_hit = true;
     }
     
-    func hitTile(button : UIButton){
-        if let color = button.backgroundColor{
-        
-            if color == .blue {
-                button.backgroundColor = UIColor.brown
-            }else if color == .brown {
-                button.backgroundColor = UIColor.blue
-            }
-        }
-    }
+    
 }

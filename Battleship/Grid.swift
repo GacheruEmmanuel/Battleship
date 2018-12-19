@@ -11,12 +11,15 @@ import UIKit
 
 class Grid
 {
-    //4 Vars that keep track of ship placement
+    //5 Vars that keep track of ship placement
     let numShipSpaces : [Int] = [5,4,3,3,2]
     var numTilesPlacedOnShip : Int = 0
     var whichShipOn : Int = 0
     var directionOfShip : String = ""
+    var currentShipPieces : [Position] = [Position]()
     
+    
+    var ships : [Ship] = [Ship]()
     
     var spaces = [Position]()
     
@@ -25,57 +28,78 @@ class Grid
         spaces = posArr
     }
     
-    func addShip(x: Int, y : Int)
+    func addShip(index : Int)
     {
-        spaces[x+y].hasShip = true;
+        spaces[index].hasShip = true;
     }
     
-    func destroyPosition(x: Int, y: Int)
+    func destroyPosition(index : Int)
     {
-        spaces[x+y].destroy()
+        spaces[index].destroy()
     }
     
-    func getPosition(x: Int, y : Int) -> Position
+    func getPosition(index : Int) -> Position
     {
-        return spaces[x+y];
+        return spaces[index];
     }
     
     func placeShip (boardGridButtons : [UIButton]!, index : Int) {
         //If no tiles have been placed, put it anywhere
         //If one tile has been placed, set the direction after the second placement
         //If two or more tiles have been placed, make sure that the tiles are connected and in the right direction
-        if numTilesPlacedOnShip == 0 {
+        
+        if numTilesPlacedOnShip == 0 && whichShipOn < numShipSpaces.count{
             boardGridButtons[index].backgroundColor = .brown
             numTilesPlacedOnShip += 1
-        } else if numTilesPlacedOnShip == 1{
+            addShip(index: index)
+            currentShipPieces.append(getPosition(index: index))
+            
+        } else if numTilesPlacedOnShip == 1 && whichShipOn < numShipSpaces.count{
+            
             if boardGridButtons[index+1].backgroundColor == .brown || boardGridButtons[index-1].backgroundColor == .brown{
                 boardGridButtons[index].backgroundColor = .brown
                 directionOfShip = "Vertical"
                 numTilesPlacedOnShip += 1
+                addShip(index: index)
+                currentShipPieces.append(getPosition(index: index))
+                
             } else if boardGridButtons[index+10].backgroundColor == .brown || boardGridButtons[index-10].backgroundColor == .brown {
+                
                 boardGridButtons[index].backgroundColor = .brown
                 directionOfShip = "Horizontal"
                 numTilesPlacedOnShip += 1
-            }
-            if numTilesPlacedOnShip == numShipSpaces[whichShipOn] {
-                whichShipOn += 1
-                numTilesPlacedOnShip = 0
-                directionOfShip = ""
+                addShip(index: index)
+                currentShipPieces.append(getPosition(index: index))
+                
             }
             print(directionOfShip)
-        } else {
+            
+        } else if whichShipOn < numShipSpaces.count {
             if boardGridButtons[index+1].backgroundColor == .brown || boardGridButtons[index-1].backgroundColor == .brown && directionOfShip == "Vertical"{
+                
                 boardGridButtons[index].backgroundColor = .brown
                 numTilesPlacedOnShip += 1
+                addShip(index: index)
+                currentShipPieces.append(getPosition(index: index))
+                
             } else if boardGridButtons[index+10].backgroundColor == .brown || boardGridButtons[index-10].backgroundColor == .brown && directionOfShip == "Horizontal"{
+                
                 boardGridButtons[index].backgroundColor = .brown
                 numTilesPlacedOnShip += 1
+                addShip(index: index)
+                currentShipPieces.append(getPosition(index: index))
+                
             }
-            if numTilesPlacedOnShip == numShipSpaces[whichShipOn] {
-                whichShipOn += 1
-                numTilesPlacedOnShip = 0
-                directionOfShip = ""
-            }
+        }
+        if whichShipOn < numShipSpaces.count && numTilesPlacedOnShip == numShipSpaces[whichShipOn] {
+            
+            ships.append(Ship(size: numShipSpaces[whichShipOn], positions: currentShipPieces))
+            currentShipPieces = []
+            print(ships)
+            whichShipOn += 1
+            numTilesPlacedOnShip = 0
+            directionOfShip = ""
+            
         }
     }
     
