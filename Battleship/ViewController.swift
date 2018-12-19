@@ -11,14 +11,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //2 Vars that keep track of ship placement
-    let numShipSpaces : [Int] = [5,4,3,3,2]
-    var numTilesPlacedOnShip : Int = 0
-    var whichShipOn : Int = 0
-    var directionOfShip : String = ""
+    
 
     @IBOutlet var boardGridButtons: [UIButton]!
     var gridArr : [Position]! = [Position]()
+    var grid : Grid!
     
     @IBAction func placeShip(_ sender: UIButton) {
         //sender.setTitle("ship", for: .normal)
@@ -31,28 +28,8 @@ class ViewController: UIViewController {
             }
             index += 1
         }
+        grid.placeShip(boardGridButtons: boardGridButtons, index: index)
         
-        //If no tiles have been placed, put it anywhere
-        //If one tile has been placed, set the direction after the second placement
-        //If two or more tiles have been placed, make sure that the tiles are connected and in the right direction
-        if numTilesPlacedOnShip == 0 {
-            boardGridButtons[index].backgroundColor = .brown
-            numTilesPlacedOnShip += 1
-        } else if numTilesPlacedOnShip == 1{
-            if boardGridButtons[index+1].backgroundColor == .brown || boardGridButtons[index-1].backgroundColor == .brown{
-                boardGridButtons[index].backgroundColor = .brown
-                directionOfShip = "Vertical"
-                numTilesPlacedOnShip += 1
-            } else if boardGridButtons[index+10].backgroundColor == .brown || boardGridButtons[index-10].backgroundColor == .brown {
-                boardGridButtons[index].backgroundColor = .brown
-                directionOfShip = "Horizontal"
-                numTilesPlacedOnShip += 1
-            }
-            
-            print(directionOfShip)
-        } else {
-            print("Error")
-        }
         
     }
     override func viewDidLoad() {
@@ -63,6 +40,7 @@ class ViewController: UIViewController {
             let tempPosition : Position = Position(hasShip: false)
             gridArr.append(tempPosition)
         }
+        grid = Grid(posArr: gridArr)
         
         //For every button on the screen
         for button in boardGridButtons {
