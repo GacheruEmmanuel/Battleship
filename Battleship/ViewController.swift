@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var gridArr : [Position]! = [Position]()
     
     @IBAction func changeNames(_ sender: UIButton) {
-        sender.setTitle("ship", for: .normal)
+        //sender.setTitle("ship", for: .normal)
         
         //Identifying the index of the tile pressed
         var index = 0
@@ -26,8 +26,13 @@ class ViewController: UIViewController {
             index += 1
         }
         
+        
         //Changing the color of the tile that was hit
-        gridArr[index].hitTile(button: sender)
+        boardGridButtons[index+1].backgroundColor = .brown
+        boardGridButtons[index-1].backgroundColor = .brown
+        boardGridButtons[index+10].backgroundColor = .brown
+        boardGridButtons[index-10].backgroundColor = .brown
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

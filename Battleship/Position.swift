@@ -28,6 +28,13 @@ struct Position
     }
     
     func hitTile(button : UIButton){
-        button.backgroundColor = UIColor.brown
+        if let color = button.backgroundColor{
+        
+            if color == .blue {
+                button.backgroundColor = UIColor.brown
+            }else if color == .brown {
+                button.backgroundColor = UIColor.blue
+            }
+        }
     }
 }
