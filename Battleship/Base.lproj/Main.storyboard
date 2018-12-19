@@ -31,9 +31,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvu-mI-McJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="68.5" height="94"/>
                                                 <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <action selector="changeNames:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Gq-KU-gQ3"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZK-tc-c6k">
                                                 <rect key="frame" x="0.0" y="99" width="68.5" height="94"/>
